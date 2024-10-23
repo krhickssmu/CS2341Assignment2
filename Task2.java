@@ -3,7 +3,6 @@ public class Task2 {
         PriorityQueue jobQueue = new PriorityQueue(10);
         int totalJobs = 0;
         int totalTime = 0;
-        int completionTimeSum = 0;
         while (!StdIn.isEmpty()) {
             int jobId = StdIn.readInt();
             int processingTime = StdIn.readInt();
@@ -15,14 +14,13 @@ public class Task2 {
         StdOut.print("Execution order: [");
         while (!jobQueue.isEmpty()) {
             Job2 job = (Job2) jobQueue.remove();
-            totalTime += job.processingTime;
-            completionTimeSum += totalTime;
+            totalTime = totalTime + job.processingTime;
             StdOut.print(job.jobID + (jobQueue.isEmpty() ? "" : ", "));
         }
         StdOut.print("]");
 
         // Calculate and print average completion time
-        double averageCompletionTime = (double) completionTimeSum / totalJobs;
+        double averageCompletionTime = (double) totalTime/totalJobs;
         StdOut.println();
         StdOut.println("Average completion time: " + averageCompletionTime);
     }

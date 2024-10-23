@@ -1,6 +1,6 @@
 public class Task1 {
         public static void main(String[] args) {
-            PriorityQueue jobQueue = new PriorityQueue(10);  // Initial capacity of 10
+            PriorityQueue jobQueue = new PriorityQueue(10);  
             int totalJobs = 0;
             int totalTime = 0;
             int completionTimeSum = 0;
